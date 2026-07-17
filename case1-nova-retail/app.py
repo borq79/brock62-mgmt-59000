@@ -6,7 +6,7 @@ st.set_page_config(page_title="NovaRetail Customer Intelligence", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_excel("NR_dataset.xlsx")
+    df = pd.read_excel("case1-nova-retail/NR_dataset.xlsx")
     df["TransactionDate"] = pd.to_datetime(df["TransactionDate"])
     df["CustomerID"] = df["CustomerID"].astype(str)
     df["Month"] = df["TransactionDate"].dt.to_period("M").dt.strftime("%b %Y")
